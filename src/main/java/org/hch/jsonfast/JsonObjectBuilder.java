@@ -3,7 +3,7 @@ package org.hch.jsonfast;
 /**
  * Created by hernan on 24/11/16.
  */
-public class JsonObjectBuilder {
+public class JsonObjectBuilder implements JsonObjectMaker{
 
     private static final char[] NULL = {'n','u','l','l'};
     private static final char TS = '"';
