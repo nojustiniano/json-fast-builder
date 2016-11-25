@@ -19,7 +19,7 @@ jsonObjectBuilder
                 .put("Mariano")
                 .put("Facundo"))
         .putNull("campoNull");
-jsonObjectBuilder.toString();
+System.out.println(jsonObjectBuilder);
 ```
 
 <h2>Result</h2>
