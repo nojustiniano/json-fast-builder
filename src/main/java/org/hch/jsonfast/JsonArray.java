@@ -30,6 +30,11 @@ public class JsonArray implements JsonArrayMaker{
         return this;
     }
 
+    public JsonArray put(int index, Object value){
+        array.add(index, value.toString());
+        return this;
+    }
+
     public JsonArray putNull(){
         array.add(NULL);
         return this;
