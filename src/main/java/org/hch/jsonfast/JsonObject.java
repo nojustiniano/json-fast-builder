@@ -1,6 +1,7 @@
 package org.hch.jsonfast;
 
-import java.util.LinkedHashMap;
+import org.hch.list.LinkedHashTreeMap;
+
 import java.util.Map;
 
 /**
@@ -8,13 +9,13 @@ import java.util.Map;
  */
 public class JsonObject implements JsonObjectMaker{
 
-    private static final char[] NULL = {'n','u','l','l'};
+    private static final String NULL = "null";
     private static final char TS = '"';
     private static final char FS = ',';
-    private LinkedHashMap<String, Object> map;
+    private LinkedHashTreeMap<String, Object> map;
 
     public JsonObject() {
-        map = new LinkedHashMap();
+        map = new LinkedHashTreeMap();
     }
 
     public JsonObject put(String key, String value){

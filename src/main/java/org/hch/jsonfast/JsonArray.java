@@ -1,5 +1,7 @@
 package org.hch.jsonfast;
 
+import org.hch.list.StringList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,20 +10,21 @@ import java.util.List;
  */
 public class JsonArray implements JsonArrayMaker{
 
-    private static final String NULL = "null";
+    private static final char[] NULL = {'n','u','l','l'};
     private static final char TS = '"';
     private static final char FS = ',';
-    private List<String> array;
+    private int off = 0;
+    private StringList array;
 
     public JsonArray(){
-        array = new ArrayList<>();
+        array = new StringList();
     }
 
     public JsonArray put(String value){
         if (value == null)
             return putNull();
 
-        array.add(TS+value+TS);
+        array.add(new StringBuilder().append(TS).append(value).append(TS).toString());
         return this;
     }
 
@@ -48,7 +51,7 @@ public class JsonArray implements JsonArrayMaker{
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder(255);
         stringBuilder.append('[');
-        for (String value: array) {
+        for (char[] value: array.getData()) {
             stringBuilder
                     .append(value)
                     .append(FS);
