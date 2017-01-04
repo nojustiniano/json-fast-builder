@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by hernan on 26/11/16.
  */
 public class StringList {
-    private static final int DEFAULT_CAPACITY = 100;
+    private static final int DEFAULT_CAPACITY = 20;
     private char[][] data;
     private int off = 0;
 
@@ -22,7 +22,7 @@ public class StringList {
         // if there is not enough room to store the value a new array is created.
         // (like in java.lang.ArrayList)
         if (off >= data.length) {
-            data = Arrays.copyOf(data, data.length * 2);
+            data = Arrays.copyOf(data, data.length + DEFAULT_CAPACITY);
         }
         data[off++] = value;
     }

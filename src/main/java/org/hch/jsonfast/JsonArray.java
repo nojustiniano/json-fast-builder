@@ -2,13 +2,10 @@ package org.hch.jsonfast;
 
 import org.hch.list.StringList;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by hernan on 24/11/16.
+ * @author hernan on 24/11/16.
  */
-public class JsonArray implements JsonArrayMaker{
+public class JsonArray{
 
     private static final char[] NULL = {'n','u','l','l'};
     private static final char TS = '"';

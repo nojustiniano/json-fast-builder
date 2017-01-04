@@ -1,21 +1,21 @@
 package org.hch.jsonfast;
 
-import org.hch.list.LinkedHashTreeMap;
+import org.hch.list.CustomMapArray;
 
 import java.util.Map;
 
 /**
- * Created by hernan on 24/11/16.
+ * @author hernan on 24/11/16.
  */
-public class JsonObject implements JsonObjectMaker{
+public class JsonObject{
 
     private static final String NULL = "null";
     private static final char TS = '"';
     private static final char FS = ',';
-    private LinkedHashTreeMap<String, Object> map;
+    private CustomMapArray map;
 
     public JsonObject() {
-        map = new LinkedHashTreeMap();
+        map = new CustomMapArray();
     }
 
     public JsonObject put(String key, String value){
@@ -45,7 +45,7 @@ public class JsonObject implements JsonObjectMaker{
         StringBuilder stringBuilder = new StringBuilder(255);
         stringBuilder.append('{');
 
-        for (Map.Entry<String, Object> entry : map.entrySet()) {
+        for (Map.Entry<String, Object> entry : map.getArray()) {
             stringBuilder
                     .append(TS)
                     .append(entry.getKey())
